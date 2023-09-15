@@ -45,12 +45,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// TODO Auto-generated method stub
 		
-		//http.formLogin();
+		http.formLogin();
 
 		http.csrf().disable();
 		http.authorizeRequests().antMatchers("/login/**","register/**").permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.POST,"/tasks/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/tasks/**").permitAll();
+
 		http.authorizeRequests().anyRequest().authenticated()
+		
         .and()
         .httpBasic(	);
 		
