@@ -23,10 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// TODO Auto-generated method stub
-		/*auth.inMemoryAuthentication()
+		//default values
+		auth.inMemoryAuthentication()
 		.withUser("admin").password("{noop}1234").roles("ADMIN","USER")
 		.and()
-		.withUser("user").password("{noop}1234").roles("USER");*/
+		.withUser("user").password("{noop}1234").roles("USER");
 		
 		/*auth.userDetailsService(userDetailsService)
 		.passwordEncoder(bCryptPasswordEncoder);*/
